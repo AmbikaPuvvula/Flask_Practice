@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register Form</title>
+</head>
+<body>
+	{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class = "alert alert-success">
+              <strong>{{message}}</strong>
+            </div>
+        {% endfor %}
+    {% endif %}
+  {% endwith %}
+	<form action = "{{ url_for('register')}}" method = "post">
+		<label>Full Name</label><input type="text" name="fname">
+		<br>
+		<label>Email Id</label><input type="email" name="emailid">
+		<br>
+		<label>Mobile No</label><input type="text" name="mobileno">
+		<button type = "Submit">Register</button>
+	</form>
+
+</body>
+</html>
