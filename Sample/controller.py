@@ -15,6 +15,10 @@ class Sample(db.Model):
 		self.name = name
 		self.email = email
 		self.phno = phno
+@app.route('/mypage/show')
+def show():
+	data = Sample.query.all()
+	return render_template('showlist.html',data = data)
 @app.route('/welcome/<name>')
 def msg1(name):
 	return "<h2>Welcome "+ name + "</h2>"
@@ -57,9 +61,13 @@ def register():
 		name = request.form['fname']
 		mailid = request.form['emailid']
 		mobileno = request.form['mobileno']
-		flash("Registration Completed....")
-		return render_template('loginform.html')
+		#flash("Registration Completed....")
+		#return render_template('loginform.html')
 		#print(name,mailid,mobileno)
+		sm = Sample(name,mailid,mobileno)
+		db.session.add(sm)
+		db.session.commit()
+		return "<h2>Record Inserted......</h2>"
 	flash("Register here....")
 	return render_template('register.html')
 @app.route('/mypage/login')

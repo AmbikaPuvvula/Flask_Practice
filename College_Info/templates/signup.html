@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up Form</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+	<div class = "card-body">
+		<div class = "card-header"><h2>Sign Up Form</h2></div>
+	</div>
+  
+  	<form action="{{url_for('signup')}}" method ='POST'>
+    	<div class="form-group">
+      		<label for="name">Name:</label>
+      		<input type="text" class="form-control" id="name" placeholder="Enter Your Full Name" name="name">
+    	</div>
+    	<div class="form-group">
+      		<label for="rollno">Roll Number:</label>
+      		<input type="text" class="form-control" id="rollno" placeholder="Enter Your roll Number" name="rno">
+    	</div>
+    	<div class="form-group">
+      		<label for="branch">Branch:</label>
+      		<input type="text" class="form-control" id="branch" placeholder="Enter Your Branch Name" name="branch">
+    	</div>
+    	<div class="form-group">
+      		<label for="Mobile">Mobile Number:</label>
+      		<input type="text" class="form-control" id="mobileno" placeholder="Enter Your Contact Number" name="mno">
+    	</div>
+    	<div class="form-group">
+      		<label for="email">Email:</label>
+      		<input type="email" class="form-control" id="email" placeholder="Enter Your Mail Id" name="email">
+    	</div>
+    <div class = "card-footer">
+    	<button type="submit" class="btn btn-success">Sign Up</button>
+	</div>
+	</form>
+</div>
+
+</body>
+</html>
